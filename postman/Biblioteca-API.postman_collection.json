@@ -1,0 +1,55 @@
+{
+  "info": {
+    "name": "Biblioteca API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:8080/api/libros" }
+  ],
+  "item": [
+    {
+      "name": "Listar todos los libros",
+      "request": { "method": "GET", "url": "{{base_url}}" }
+    },
+    {
+      "name": "Buscar libro por id",
+      "request": { "method": "GET", "url": "{{base_url}}/1" }
+    },
+    {
+      "name": "Crear libro",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"El Quijote\",\n  \"autor\": \"Miguel de Cervantes\",\n  \"isbn\": \"978-8420412146\"\n}"
+        },
+        "url": "{{base_url}}"
+      }
+    },
+    {
+      "name": "Actualizar libro",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"El Quijote (edicion revisada)\",\n  \"autor\": \"Miguel de Cervantes\",\n  \"isbn\": \"978-8420412146\"\n}"
+        },
+        "url": "{{base_url}}/1"
+      }
+    },
+    {
+      "name": "Prestar libro",
+      "request": { "method": "POST", "url": "{{base_url}}/1/prestar" }
+    },
+    {
+      "name": "Devolver libro",
+      "request": { "method": "POST", "url": "{{base_url}}/1/devolver" }
+    },
+    {
+      "name": "Eliminar libro",
+      "request": { "method": "DELETE", "url": "{{base_url}}/1" }
+    }
+  ]
+}

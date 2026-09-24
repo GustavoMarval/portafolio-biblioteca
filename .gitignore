@@ -1,0 +1,14 @@
+# Backend (Maven / IntelliJ)
+target/
+out/
+*.iml
+.idea/
+
+# Frontend (Node)
+node_modules/
+dist/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+*.log
